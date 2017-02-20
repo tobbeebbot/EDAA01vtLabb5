@@ -11,6 +11,7 @@ import org.junit.Test;
 import map.*;
 
 public class TestSimpleHashMap {
+
 	Map<Integer, Integer> m;
 	Map<Integer, Integer> m16;
 	Map<String, Integer> s;

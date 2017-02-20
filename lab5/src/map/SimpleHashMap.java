@@ -3,6 +3,25 @@ package map;
 
 public class SimpleHashMap<K, V> implements Map<K, V>{
 
+    public static void main(String[] args){
+        SimpleHashMap<Integer, Integer> map = new SimpleHashMap<>(10);
+
+        for(int i = 0; i < 6; i++){
+            int rnd = (int) (Math.random() * 20) - 10;
+            map.put(rnd, rnd);
+        }
+        System.out.print(map.show());
+        System.out.println("size: " + map.size + ", load: " + map.size / (float) map.table.length + "\n");
+
+        for(int i = 0; i < 100; i++){
+            int rnd = (int) (Math.random() * 500) - 250;
+            map.put(rnd, rnd);
+        }
+
+        System.out.print(map.show());
+        System.out.println("size: " + map.size + ", load: " +  map.size / (float) map.table.length + "\n");
+    }
+
     Entry<K,V>[] table;
     int size;
     float loadFactor;
